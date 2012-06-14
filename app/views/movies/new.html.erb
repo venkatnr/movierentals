@@ -1,0 +1,16 @@
+Enter new movie information:
+<%= form_for @movie do |f| -%>
+  Title: <%= f.text_field :title%></br>
+  Year: <%= f.text_field :year%></br>
+ <%= f.submit "save movie" %>
+<%end%>
+<hr>	
+<u>List of all Movies</u></br>
+<% if @movies.blank? %>
+No Moves are  in List
+<%else%>
+	<%for list in @movies%>
+		<%= link_to list.title, :controller => :rentals, :action => :new, :id => list.id %>(<%= list.year %>)
+		<br>
+	<%end%>
+<%end%>

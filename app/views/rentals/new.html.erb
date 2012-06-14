@@ -1,0 +1,19 @@
+Movie: <%= @movie.title %>(<%= link_to "back", new_movie_path %>)
+<hr>(date format yyyy/mm/dd)
+<%= form_for @rental, :url => {:action => :create, :id => @movie.id }  do |f| -%>
+	taken date: <%= f.text_field  :taking_on %><br>
+	given date: <%=	f.text_field :given_on %><br>
+<%=f.submit%>
+<%end%>
+<hr>
+<% if @movie.rentals.exists? %>
+<%for taken in @movie.rentals%>
+	<% if !taken.taking_on.nil? %>
+		<%= taken.taking_on%>|<%= taken.given_on%><br>
+	<%end%>
+<%end%>
+<%else%>
+Not yet taken single time
+
+<%end%>
+

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  taking_on: 2012-06-13
+  given_on: 2012-06-13
+  movie_id: 1
+
+two:
+  taking_on: 2012-06-13
+  given_on: 2012-06-13
+  movie_id: 1
